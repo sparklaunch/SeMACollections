@@ -49,7 +49,13 @@ struct Collection: Identifiable, Codable {
         case imageURL = "main_image"
         case thumbnailURL = "thumb_image"
     }
-    let id = UUID()
+    var id: Int {
+        var hasher = Hasher()
+        hasher.combine(koreanName)
+        hasher.combine(standard)
+        hasher.combine(imageURL)
+        return hasher.finalize()
+    }
     let classification: String
     let yearCollected: Date
     let koreanName: String

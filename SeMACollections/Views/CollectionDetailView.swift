@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CollectionDetailView: View {
+    @EnvironmentObject private var favoritesManager: FavoritesManager
     let collection: Collection
     var body: some View {
         ScrollView {
@@ -27,12 +28,30 @@ struct CollectionDetailView: View {
                 }
                 .scaledToFit()
                 VStack(alignment: .leading, spacing: 10) {
-                    VStack(alignment: .leading) {
-                        Text(collection.koreanName)
-                            .font(.largeTitle.bold())
-                        Text(collection.englishName)
-                            .font(.title3)
-                            .foregroundColor(.secondary)
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(collection.koreanName)
+                                .font(.largeTitle.bold())
+                            Text(collection.englishName)
+                                .font(.title3)
+                                .foregroundColor(.secondary)
+                        }
+                        Spacer()
+                        if favoritesManager.has(collection) {
+                            Button {
+                                favoritesManager.remove(collection)
+                            } label: {
+                                Image(systemName: "star.fill")
+                                    .imageScale(.large)
+                            }
+                        } else {
+                            Button {
+                                favoritesManager.add(collection)
+                            } label: {
+                                Image(systemName: "star")
+                                    .imageScale(.large)
+                            }
+                        }
                     }
                     Text("**Author**: \(collection.authorName).")
                     Text("**Classification**: \(collection.classification).")
@@ -57,5 +76,6 @@ struct CollectionDetailView: View {
 struct CollectionDetailView_Previews: PreviewProvider {
     static var previews: some View {
         CollectionDetailView(collection: Collection.example)
+            .environmentObject(FavoritesManager())
     }
 }

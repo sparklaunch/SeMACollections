@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct FavoritesView: View {
+    @EnvironmentObject private var favoritesManager: FavoritesManager
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                ForEach(favoritesManager.favorites) { favorite in
+                    CollectionRow(collection: favorite)
+                }
+            }
+            .navigationTitle("Favorites")
+        }
+        .navigationViewStyle(.stack)
     }
 }
 
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
         FavoritesView()
+            .environmentObject(FavoritesManager())
     }
 }

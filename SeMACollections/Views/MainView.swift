@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject private var collectionsManager: CollectionsManager
-    @State private var isLoading = false
     @State private var searchText = ""
     var body: some View {
         ZStack {
@@ -26,18 +25,6 @@ struct MainView: View {
                 .navigationTitle("Collections (\(collectionsManager.count))")
             }
             .navigationViewStyle(.stack)
-            .task {
-                do {
-                    isLoading = true
-                    try await collectionsManager.loadData()
-                    isLoading = false
-                } catch {
-                    print(error.localizedDescription)
-                }
-            }
-            if isLoading {
-                ProgressView()
-            }
         }
     }
 }
