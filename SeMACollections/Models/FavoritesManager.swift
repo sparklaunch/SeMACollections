@@ -66,4 +66,8 @@ import SwiftUI
             print(error.localizedDescription)
         }
     }
+    func delete(at offsets: IndexSet) {
+        favorites.remove(atOffsets: offsets)
+        saveData()
+    }
 }

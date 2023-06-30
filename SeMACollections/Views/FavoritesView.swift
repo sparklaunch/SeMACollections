@@ -20,6 +20,7 @@ struct FavoritesView: View {
                         CollectionRow(collection: favorite)
                     }
                 }
+                .onDelete(perform: favoritesManager.delete)
             }
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             .autocorrectionDisabled()
