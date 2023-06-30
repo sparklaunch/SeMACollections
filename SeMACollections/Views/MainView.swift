@@ -15,7 +15,7 @@ struct MainView: View {
             NavigationView {
                 List(collectionsManager.collections) { collection in
                     NavigationLink {
-
+                        CollectionDetailView(collection: collection)
                     } label: {
                         CollectionRow(collection: collection)
                     }

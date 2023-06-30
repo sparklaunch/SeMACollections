@@ -16,6 +16,7 @@
 		90DB5E512A4ED2A20086C8C7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5E502A4ED2A20086C8C7 /* MainView.swift */; };
 		90DB5E532A4ED35A0086C8C7 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5E522A4ED35A0086C8C7 /* FavoritesView.swift */; };
 		90DB5E552A4ED5490086C8C7 /* CollectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5E542A4ED5490086C8C7 /* CollectionRow.swift */; };
+		90DB5E572A4F8C5B0086C8C7 /* CollectionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5E562A4F8C5B0086C8C7 /* CollectionDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		90DB5E502A4ED2A20086C8C7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		90DB5E522A4ED35A0086C8C7 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		90DB5E542A4ED5490086C8C7 /* CollectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRow.swift; sourceTree = "<group>"; };
+		90DB5E562A4F8C5B0086C8C7 /* CollectionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				90DB5E502A4ED2A20086C8C7 /* MainView.swift */,
 				90DB5E522A4ED35A0086C8C7 /* FavoritesView.swift */,
 				90DB5E542A4ED5490086C8C7 /* CollectionRow.swift */,
+				90DB5E562A4F8C5B0086C8C7 /* CollectionDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				90DB5E3B2A4ECA0F0086C8C7 /* SeMACollectionsApp.swift in Sources */,
 				90DB5E512A4ED2A20086C8C7 /* MainView.swift in Sources */,
 				90DB5E4F2A4ECD750086C8C7 /* Collections.swift in Sources */,
+				90DB5E572A4F8C5B0086C8C7 /* CollectionDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
