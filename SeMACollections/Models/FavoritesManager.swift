@@ -30,6 +30,9 @@ import SwiftUI
             }
         }
     }
+    init() {
+        loadData()
+    }
     func loadData() {
         if let data = try? Data(contentsOf: targetURL) {
             guard let decodedData = try? JSONDecoder().decode([Collection].self, from: data) else {
@@ -45,10 +48,22 @@ import SwiftUI
     }
     func add(_ collection: Collection) {
         favorites.append(collection)
+        saveData()
     }
     func remove(_ collection: Collection) {
         if let index = favorites.firstIndex(of: collection) {
             favorites.remove(at: index)
+            saveData()
+        }
+    }
+    func saveData() {
+        guard let encodedData = try? JSONEncoder().encode(favorites) else {
+            fatalError("Failed to encode data.")
+        }
+        do {
+            try encodedData.write(to: targetURL, options: [.atomic, .completeFileProtection])
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
