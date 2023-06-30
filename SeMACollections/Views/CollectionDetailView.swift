@@ -39,7 +39,9 @@ struct CollectionDetailView: View {
                     Text("**Year Collected**: \(collection.yearCollected.formatted(.dateTime.year())).")
                     Text("**Standard**: \(collection.standard).")
                     Text("**Year Made**: \(collection.yearMade).")
-                    Text("**Material and Technique**: \(collection.materialAndTechnique).")
+                    if !collection.materialAndTechnique.isEmpty {
+                        Text("**Material and Technique**: \(collection.materialAndTechnique).")
+                    }
                     if !collection.description.isEmpty {
                         Text("**Description**: \(collection.description).")
                     }

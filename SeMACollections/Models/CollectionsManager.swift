@@ -33,4 +33,13 @@ import SwiftUI
             print(error.localizedDescription)
         }
     }
+    func searchedCollections(with searchText: String) -> [Collection] {
+        if searchText.isEmpty {
+            return collections
+        } else {
+            return collections.filter { collection in
+                collection.koreanName.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
 }

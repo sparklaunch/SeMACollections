@@ -10,16 +10,19 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject private var collectionsManager: CollectionsManager
     @State private var isLoading = false
+    @State private var searchText = ""
     var body: some View {
         ZStack {
             NavigationView {
-                List(collectionsManager.collections) { collection in
+                List(collectionsManager.searchedCollections(with: searchText)) { collection in
                     NavigationLink {
                         CollectionDetailView(collection: collection)
                     } label: {
                         CollectionRow(collection: collection)
                     }
                 }
+                .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+                .autocorrectionDisabled()
                 .navigationTitle("Collections (\(collectionsManager.count))")
             }
             .navigationViewStyle(.stack)
