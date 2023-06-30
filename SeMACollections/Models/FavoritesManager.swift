@@ -21,6 +21,15 @@ import SwiftUI
             _favorites = newValue
         }
     }
+    func searchedFavorites(with searchText: String) -> [Collection] {
+        if searchText.isEmpty {
+            return favorites
+        } else {
+            return favorites.filter { favorite in
+                favorite.koreanName.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
     func loadData() {
         if let data = try? Data(contentsOf: targetURL) {
             guard let decodedData = try? JSONDecoder().decode([Collection].self, from: data) else {

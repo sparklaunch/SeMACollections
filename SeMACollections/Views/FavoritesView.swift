@@ -9,14 +9,21 @@ import SwiftUI
 
 struct FavoritesView: View {
     @EnvironmentObject private var favoritesManager: FavoritesManager
+    @State private var searchText = ""
     var body: some View {
         NavigationView {
             List {
-                ForEach(favoritesManager.favorites) { favorite in
-                    CollectionRow(collection: favorite)
+                ForEach(favoritesManager.searchedFavorites(with: searchText)) { favorite in
+                    NavigationLink {
+                        CollectionDetailView(collection: favorite)
+                    } label: {
+                        CollectionRow(collection: favorite)
+                    }
                 }
             }
-            .navigationTitle("Favorites")
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+            .autocorrectionDisabled()
+            .navigationTitle("Favorites (\(favoritesManager.searchedFavorites(with: searchText).count))")
         }
         .navigationViewStyle(.stack)
     }
