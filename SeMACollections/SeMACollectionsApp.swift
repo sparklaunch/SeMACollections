@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SeMACollectionsApp: App {
+    @StateObject private var collectionsManager = CollectionsManager()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(collectionsManager)
         }
     }
 }
