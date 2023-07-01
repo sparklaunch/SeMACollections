@@ -26,6 +26,15 @@ struct CollectionDetailView: View {
                             Text("Unknown case.")
                     }
                 }
+                .contextMenu {
+                    Button {
+                        Task { @MainActor in
+                            await PhotosManager.saveToPhotosLibrary(with: URL(string: collection.imageURL)!)
+                        }
+                    } label: {
+                        Label("Save", systemImage: "photo")
+                    }
+                }
                 .scaledToFit()
                 VStack(alignment: .leading, spacing: 10) {
                     HStack {

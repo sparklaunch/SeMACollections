@@ -18,6 +18,7 @@
 		90DB5E552A4ED5490086C8C7 /* CollectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5E542A4ED5490086C8C7 /* CollectionRow.swift */; };
 		90DB5E572A4F8C5B0086C8C7 /* CollectionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5E562A4F8C5B0086C8C7 /* CollectionDetailView.swift */; };
 		90DB5E592A4F91D20086C8C7 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5E582A4F91D20086C8C7 /* FavoritesManager.swift */; };
+		90DB5E5B2A5004920086C8C7 /* PhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5E5A2A5004920086C8C7 /* PhotosManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		90DB5E542A4ED5490086C8C7 /* CollectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRow.swift; sourceTree = "<group>"; };
 		90DB5E562A4F8C5B0086C8C7 /* CollectionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailView.swift; sourceTree = "<group>"; };
 		90DB5E582A4F91D20086C8C7 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		90DB5E5A2A5004920086C8C7 /* PhotosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				90DB5E4C2A4ECB2C0086C8C7 /* CollectionsManager.swift */,
 				90DB5E4E2A4ECD750086C8C7 /* Collections.swift */,
 				90DB5E582A4F91D20086C8C7 /* FavoritesManager.swift */,
+				90DB5E5A2A5004920086C8C7 /* PhotosManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				90DB5E552A4ED5490086C8C7 /* CollectionRow.swift in Sources */,
 				90DB5E3B2A4ECA0F0086C8C7 /* SeMACollectionsApp.swift in Sources */,
 				90DB5E512A4ED2A20086C8C7 /* MainView.swift in Sources */,
+				90DB5E5B2A5004920086C8C7 /* PhotosManager.swift in Sources */,
 				90DB5E4F2A4ECD750086C8C7 /* Collections.swift in Sources */,
 				90DB5E592A4F91D20086C8C7 /* FavoritesManager.swift in Sources */,
 				90DB5E572A4F8C5B0086C8C7 /* CollectionDetailView.swift in Sources */,
@@ -316,6 +320,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeMACollections/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need to access your photos library to add the images.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -357,6 +362,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeMACollections/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need to access your photos library to add the images.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
